@@ -30,8 +30,11 @@
     <![endif]-->
 
   <!-- tabs test -->
+  <link rel="stylesheet" href="css/tabs.css">
+<!--
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link href="css/vertical-tabs.css" rel="stylesheet">
+-->
 </head>
 
 <body id="page-top" class="index">
@@ -170,6 +173,84 @@ prevention, separate collection, recycling and composting of materials in waste.
                     <br/>
 	            </div>
             </div>
+            <div class="container">
+	<div class="row">
+        <div class="col-lg-10 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container text-center">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <h4 class="glyphicon glyphicon-plane"></h4><br/>Volunteering
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-road"></h4><br/>I think in images
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-home"></h4><br/>Technology
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-cutlery"></h4><br/>Stories
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-credit-card"></h4><br/>Local
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-plane"></h4><br/>Unique
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- volunteer section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <h1 class="glyphicon glyphicon-plane" style="font-size:10em;color:#5a8f5a"></h1>
+                      <h3 style="margin-top: 0;color:#5a8f5a">There is only so much work and energy one can fit into a day, while on the other hand the need for environmental change is rising. Come and help us catch up!</h3>
+                    </center>
+                </div>
+                <!-- Images -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#5a8f5a"></h1>
+<!--                       <h2 style="margin-top: 0;color:#5a8f5a">Coming Soon</h2> -->
+                      <h3 style="margin-top: 0;color:#5a8f5a">We are seeking help from designers to enrich our messages and open new channels.<br/>
+	  					If you can draw, paint, edit, do video; web, service or game design, you can make a difference.</h3>
+                    </center>
+                </div>
+
+                <!-- Technology -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-home" style="font-size:1em;color:#5a8f5a"></h1>
+                      <h3 style="margin-top: 0;color:#5a8f5a">Modern technology is a bottomless well. Come and help us drink from it.<br/>
+	  					Our uses center around web, GIS and OpenData, so if you can code or analyze, come and join our team.</h3>
+                    </center>
+                </div>
+                <!--I tell stories-->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#5a8f5a"></h1>
+                      <h3 style="margin-top: 0;color:#5a8f5a">Much of our work relies on efficient and meaningful communication. If you have a knack for
+	  						storytelling or research, let us know!</h3>
+                    </center>
+                </div>
+                <!-- Local Life -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#5a8f5a"></h1>
+                      <h3 style="margin-top: 0;color:#5a8f5a">Awesome, we hope you're having a blast! Let us know if you want to meet or help with our real-life events.</h3>
+                    </center>
+                </div>
+                <!--Special-->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#5a8f5a"></h1>
+                      <h3 style="margin-top: 0;color:#5a8f5a">If you don't identify with any of the above, you can always help us by promoting our work and/or donating.</h3>
+                    </center>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
+<!--
             <div class="row">
                 <div class="col-lg-12 text-center">
 
@@ -207,6 +288,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 
 	            </div>
             </div>
+-->
         </div>
     </section>
 
@@ -531,15 +613,28 @@ prevention, separate collection, recycling and composting of materials in waste.
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
-
+<!--Boot Strap jQuery-->
+<script>
+$(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
+</script>
 	<!-- jquery-ui for tabs -->
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!--    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script>
   $(function() {
     $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
     $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
   });
     </script>
+-->
 
 </body>
 
