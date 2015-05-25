@@ -67,3 +67,20 @@ div.bhoechie-tab-content{
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
 }
+
+@media (max-width: 768px){
+	div.bhoechie-tab-container{
+		margin-left: 20px;
+		width: 90%;
+
+		}
+	div.bhoechie-tab-content{
+		padding-left: 10px;
+		padding-top: 5px;
+		height: 500px !important;
+		overflow: scroll;
+
+	}
+
+
+}
