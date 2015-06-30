@@ -54,7 +54,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after{
   border-left: 0;
   border-bottom: 13px solid transparent;
   border-top: 13px solid transparent;
-  border-left: 10px solid #5a8f5a;
+  border-left: 10px solid rgb(44, 62, 80);
 }
 
 div.bhoechie-tab-content{
