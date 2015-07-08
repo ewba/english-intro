@@ -83,7 +83,14 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #5a8f5a;
+    background:
+    	linear-gradient(
+    	rgba(90, 143, 90, .75),
+    	rgba(90, 143, 90, .75)
+    	),
+    url('../img/badbags.jpg');
+    overflow: hidden;
+    width: 100%;
 }
 
 header .container {
