@@ -8,4 +8,5 @@
  ExpiresByType text/javascript A1000000
  ExpiresByType application/javascript A1000000
  ExpiresByType application/x-javascript A1000000
+ ExpiresByType application/font-woff A1000000
 </IfModule>
