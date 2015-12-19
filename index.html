@@ -565,8 +565,14 @@ $(document).ready(function() {
 		$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
 		$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
 	});
-	if (window.location.hash != "") {
+	switch (window.location.hash) {
+	    case "#letsdoit":
+	    case "#zero-waste":
+	    case "#waste-reduction":
+	    case "#donate":
 		$(window.location.hash).modal('show');
+	    default:
+		break
 	}
 });
 </script>
