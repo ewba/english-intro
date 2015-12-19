@@ -565,6 +565,9 @@ $(document).ready(function() {
         $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
     });
+	if (window.location.hash != "") {
+		$(window.location.hash).modal('show');
+	}
 });
 </script>
 
