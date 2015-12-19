@@ -190,7 +190,7 @@ header .intro-text .skills {
 }
 
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 section h2 {
@@ -499,4 +499,7 @@ footer .footer-below {
 	display: inline-block;
 	background: white;
 	height: 5px;
+}
+.centered {
+	text-align: center;
 }
