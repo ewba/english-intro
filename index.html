@@ -561,8 +561,8 @@ prevention, separate collection, recycling and composting of materials in waste.
 								</li>
 							</ul>
 
-							<div style="width:400px; margin: -3em auto 0 auto;">
-								<script type="text/javascript" src="https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85" defer></script>
+							<div id="iatscont" style="width:400px; margin: -3em auto 0 auto;">
+
 							</div>
 
 							<p>Thank you!</p>
@@ -607,6 +607,9 @@ $(document).ready(function() {
 	    default:
 		break
 	}
+	var script = document.createElement('script');
+	script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
+	document.getElementById('iatscont').appendChild(script);
 });
 </script>
 
