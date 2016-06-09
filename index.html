@@ -621,17 +621,18 @@ $(document).ready(function() {
 		$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
 	});
 	switch (window.location.hash) {
-	    case "#letsdoit":
-	    case "#zero-waste":
-	    case "#waste-reduction":
-	    case "#donate":
-		$(window.location.hash).modal('show');
-	    default:
-		break
+		case "#donate":
+			var script = document.createElement('script');
+			script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
+			document.getElementById('iatscont').appendChild(script);
+		case "#letsdoit":
+		case "#zero-waste":
+		case "#waste-reduction":
+			$(window.location.hash).modal('show');
+		default:
+			break
 	}
-	var script = document.createElement('script');
-	script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
-	document.getElementById('iatscont').appendChild(script);
+
 });
 </script>
 
