@@ -299,7 +299,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 				</div>
 				<div class="col-lg-8 col-lg-offset-2 text-center">
 				<span class="skills">Together we can move faster, come and join us!</span><br>
-					<a href="#donate" class="btn btn-lg btn-full portfolio-link" data-toggle="modal">
+					<a href="" id="donate-btn" class="btn btn-lg btn-full portfolio-link" data-toggle="modal">
 						<i class="fa fa-money"></i> Donate Now
 					</a>
 				</div>
@@ -611,6 +611,12 @@ prevention, separate collection, recycling and composting of materials in waste.
 	<script src="js/freelancer.js"></script>
 <!--Boot Strap jQuery-->
 <script>
+prepDonation = function() {
+	var script = document.createElement('script');
+	script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
+	document.getElementById('iatscont').appendChild(script);
+}
+
 $(document).ready(function() {
 	$("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
 		e.preventDefault();
@@ -622,9 +628,7 @@ $(document).ready(function() {
 	});
 	switch (window.location.hash) {
 		case "#donate":
-			var script = document.createElement('script');
-			script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
-			document.getElementById('iatscont').appendChild(script);
+			prepDonation();
 		case "#letsdoit":
 		case "#zero-waste":
 		case "#waste-reduction":
@@ -633,6 +637,10 @@ $(document).ready(function() {
 			break
 	}
 
+});
+$("#donate-btn").on("click", function() {
+	prepDonation();
+	$("#donate").modal('show');
 });
 </script>
 
