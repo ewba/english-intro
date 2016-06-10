@@ -615,6 +615,7 @@ prepDonation = function() {
 	var script = document.createElement('script');
 	script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
 	document.getElementById('iatscont').appendChild(script);
+	$("#iatscont").attr("id","noop");
 }
 
 $(document).ready(function() {
