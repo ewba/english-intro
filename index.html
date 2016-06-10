@@ -612,10 +612,13 @@ prevention, separate collection, recycling and composting of materials in waste.
 <!--Boot Strap jQuery-->
 <script>
 prepDonation = function() {
-	var script = document.createElement('script');
-	script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
-	document.getElementById('iatscont').appendChild(script);
-	$("#iatscont").attr("id","noop");
+	var placeholder = document.getElementById('iatscont')
+	if (placeholder !== null) {
+		var script = document.createElement('script');
+		script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
+		placeholder.appendChild(script);
+		$("#iatscont").attr("id","noop");
+	}
 }
 
 $(document).ready(function() {
