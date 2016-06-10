@@ -64,7 +64,7 @@
 						<a href="#about">About</a>
 					</li>
 					<li class="page-scroll">
-						<a href="#donate" class="portfolio-link" data-toggle="modal">Donate</a>
+						<a href="" id="donate-nav" class="portfolio-link" data-toggle="modal">Donate</a>
 					</li>
 				</ul>
 			</div>
@@ -638,7 +638,7 @@ $(document).ready(function() {
 	}
 
 });
-$("#donate-btn").on("click", function() {
+$("a[id|='donate']").on("click", function() {
 	prepDonation();
 	$("#donate").modal('show');
 });
