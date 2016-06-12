@@ -11,11 +11,14 @@ sed -n '/<script>/,/<\/script>/ { /^[^<]/p}' "$base" >> js/crit.js
 
 # clear the loads
 cp "$base" "$target"
-sed -i '/<script /d' "$target"
+sed -i '/<script src=.js/d' "$target"
 sed -i '/<script>/,/<\/script>/d' "$target"
 
 # load it
 sed -i 's,</body>,<script src="js/crit.js" async></script>&, ' "$target"
+
+# clear single lin comments
+sed -i 's/<!--.*-->//' "$target"
 
 # inline critical path css with the "critical" nodejs module
 "$critical" -m -i < "$target" > "2$target"
