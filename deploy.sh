@@ -2,7 +2,7 @@
 
 base=index0.html
 target=index.html
-critical=$(which critical || echo node_modules/.bin/critical)
+critical=$(which critical 2>/dev/null || echo node_modules/.bin/critical)
 [[ -x $critical ]] || exit 100
 
 # join the javascript and append the extracted inline logic
