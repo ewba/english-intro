@@ -21,5 +21,9 @@ sed -i 's,</body>,<script src="js/crit.js" async></script>&, ' "$target"
 sed -i 's/<!--.*-->//' "$target"
 
 # inline critical path css with the "critical" nodejs module
-"$critical" -m -i < "$target" > "2$target"
-mv "2$target" "$target"
+# in case something goes terribly wrong, just use the source html
+if "$critical" -m -i < "$target" > "2$target"; then
+  mv "2$target" "$target"
+else
+  cp "$base" "$target"
+fi
