@@ -106,3 +106,5 @@ footer .footer-below{padding:25px 0;background-color:#233140;}
 .portfolio-modal .modal-backdrop{display:none;opacity:0;}
 .fake-tail{width:105px;display:inline-block;background:white;height:5px;}
 .centered{text-align:center;}
+#donate-nav{background-color:#5a8f5a;border-radius:15%;}
+#donate-nav:hover{color:#2c3e50;}
