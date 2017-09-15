@@ -165,7 +165,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 								<i class="fa fa-plus-circle fa-3x"></i>
 							</div>
 						</div>
-						<img src="img/portfolio/plastic_monster.jpg" class="img-responsive" alt="Bag on bag: plastic monster" width="360" height="260">
+						<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/portfolio/plastic_monster.jpg" class="img-responsive" alt="Bag on bag: plastic monster" width="360" height="260">
 					 </a>
 
 					<div>
@@ -415,7 +415,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 						<div class="modal-body">
 							<h2>Let's clean up Slovenia in a day!</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/ocistimo2012.jpg" class="img-responsive img-centered" alt="Let's clean up Slovenia in a day!" width="360" height="260">
+							<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/portfolio/ocistimo2012.jpg" class="img-responsive img-centered" alt="Let's clean up Slovenia in a day!" width="360" height="260">
 							<p>Two campaigns that are still considered the <strong>largest volunteer events</strong> in the history of our nation. We managed to connect 289.000 (or <strong>14% of the population</strong>) of individuals, businesses, NGOs, Slovenian army, police, municipalities, and even President’s office, who later decorated us with the order of merit.</p>
 							<p>Joining great efforts from <a href="http://letsdoitworld.org" target="_blank" rel="noopener">Estonia</a>, we managed to convince activists from several countries to start similar initiatives for the World Cleanup 2012 campaign, most notably in the Balkans. More than 110 countries have since participated.</p>
 							Links:
@@ -463,7 +463,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 						<div class="modal-body">
 							<h2>Zero Waste Slovenia</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/ZWS-banner.jpg" class="img-responsive img-centered" alt="Zero Waste Slovenia" width="710" height="291">
+							<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/portfolio/ZWS-banner.jpg" class="img-responsive img-centered" alt="Zero Waste Slovenia" width="710" height="291">
 							<p>We are a national organization of the <a href="http://zerowasteeurope.eu/" target="_blank" rel="noopener">Zero Waste Europe</a> network. We promote the concept, organize best practice visits and convince municipalities to adopt Zero waste plans. So far 8 have done so, including Ljubljana as the first European capital. Our aim is to adopt a Zero Waste strategy on the national level.</p>
 
 							<p><h3>Slovenia without waste is not an illusion</h3>
@@ -501,7 +501,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 							<h2>Waste reduction projects</h2>
 							<hr class="star-primary">
 							<a href="https://www.youtube.com/watch?v=FfYw-tHzMCQ" target="_blank" rel="noopener" title="Another monster">
-								<img src="img/portfolio/plastic_monster.jpg" class="img-responsive img-centered" alt="" width="360" height="260">
+								<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/portfolio/plastic_monster.jpg" class="img-responsive img-centered" alt="" width="360" height="260">
 							</a>
 							<p>Actions speak louder than words, so we have implemented several waste prevention campaigns.
 								They range from accelerating textile reuse and recycling, food waste prevention across the whole chain, green tourism,
@@ -546,7 +546,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 						<div class="modal-body">
 							<h2>Support us today!</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/hands-up.jpg" class="img-responsive img-centered" alt="" width="360" height="260">
+							<img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="img/portfolio/hands-up.jpg" class="img-responsive img-centered" alt="" width="360" height="260">
 							<p>To reach our vision of a healthy environment and resource efficient economies, we need two things:
 								to believe that this is possible and your support to enable us to plow through.</p>
 
@@ -626,6 +626,14 @@ prepDonation = function() {
 }
 
 $(document).ready(function() {
+	var imgDefer = document.getElementsByTagName('img');
+	for (var i=0; i < imgDefer.length; i++) {
+		var src = imgDefer[i].getAttribute('data-src');
+		if (src) {
+			imgDefer[i].setAttribute('src', src);
+		}
+	}
+
 	$("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
 		e.preventDefault();
 		$(this).siblings('a.active').removeClass("active");
@@ -644,7 +652,6 @@ $(document).ready(function() {
 		default:
 			break
 	}
-
 });
 $("a[id|='donate']").on("click", function() {
 	prepDonation();
