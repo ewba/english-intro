@@ -23,7 +23,7 @@ hr.star-primary:after{color:#2c3e50;background-color:#fff;}
 .img-centered{margin:0 auto;}
 header{text-align:center;color:#fff;background:linear-gradient(rgba(90, 143, 90, .75),
 rgba(90, 143, 90, .75)),
-url('../img/badbags.jpg')no-repeat;height:100%;width:100%;top:0;bottom:0;left:0;right:0;z-index:0;background-position:50% 50%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;width:100%;}
+url('/en/img/badbags.jpg')no-repeat;height:100%;width:100%;top:0;bottom:0;left:0;right:0;z-index:0;background-position:50% 50%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;width:100%;}
 header .container{padding-top:100px;padding-bottom:50px;}
 header img{display:block;margin:0 auto 20px;}
 header .intro-text .name{display:block;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:2em;font-weight:700;}
