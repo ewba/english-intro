@@ -693,9 +693,11 @@ prepDonation = function() {
 	if (placeholder !== null) {
 		var script = document.createElement('script');
 		script.src = "https://js.stripe.com/v3";
+		script.async = false;
 		placeholder.appendChild(script);
 		script = document.createElement('script');
 		script.src = "https://ebm.si/en/js/stripe-btns.js";
+		script.async = false;
 		placeholder.appendChild(script);
 		$("#iatscont").attr("id","noop");
 	}
