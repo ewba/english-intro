@@ -592,7 +592,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 								<li>
 									<strong>
 										<a href="http://ebm.si/arhiv/EBM_2017_en.pdf" target="_blank" rel="noopener" title="Latest activity report">English activity reports 2017</a>, 
-										<a href="http://ebm.si/m/For_a_world_without_waste.pdf" target="_blank" rel="noopener" title="Activity report 2015">2015</a> (Slovenian for all years are on the transparency page)
+										<a href="http://ebm.si/m/For_a_world_without_waste.pdf" target="_blank" rel="noopener" title="Activity report 2015">2015</a> (All years are on the transparency page)
 									</strong>
 								</li>
 								<li>
@@ -607,7 +607,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 								</li>
 								<li>
 									<strong>
-										<a href="http://ebm.si/o/sl/component/content/article/9-uncategorised/540-transparentnost" target="_blank" rel="noopener" title="Transparency (Slovenian)">Transparency</a> (Slovenian)
+										<a href="http://ebm.si/transparentnost" target="_blank" rel="noopener" title="Transparency (Slovenian)">Transparency</a> (Slovenian)
 									</strong>
 								</li>
 								<li>
@@ -687,48 +687,18 @@ prevention, separate collection, recycling and composting of materials in waste.
 	<script src="js/cbpAnimatedHeader.min.js" async></script>
 
 	<!-- Custom Theme JavaScript -->
-	<script src="https://js.stripe.com/v3"></script>
-<script>
-(function() {
-	var stripe = Stripe('pk_live_51Hkyi1FEUB1gObsK7NrfmynQe9dftDlyYDOZKBE3WLcXxVSJZ8cAVxd5SSOwW1MMeiauFcdiAo2CHZSI1PFQMY5x00cbhghVhH');
-
-	function wireButton(price, mode = "payment") {
-		let checkoutButton = document.getElementById('checkout-button-'+price);
-		checkoutButton.addEventListener('click', function () {
-			stripe.redirectToCheckout({
-				lineItems: [{price: price, quantity: 1}],
-				mode: mode,
-				successUrl: 'https://ebm.si/en',
-				cancelUrl: 'https://ebm.si/en',
-			})
-			.then(function (result) {
-				if (result.error) {
-					var displayError = document.getElementById('error-message');
-					displayError.textContent = result.error.message;
-				}
-			});
-		});
-	}
-
-	wireButton("price_1Hst7OFEUB1gObsKwQUouhkN");
-	wireButton("price_1Hst7YFEUB1gObsKxfh7ms8h");
-	wireButton("price_1Hst7oFEUB1gObsKAGFZPC1x");
-	wireButton("price_1Hst8CFEUB1gObsKsnNznlbV", "subscription");
-	wireButton("price_1Hst8JFEUB1gObsK0V5kxStW", "subscription");
-	wireButton("price_1Hst8SFEUB1gObsKSxuRU7j7", "subscription");
-
-})();
-</script>
-
 <script>
 prepDonation = function() {
-	/*var placeholder = document.getElementById('iatscont')
+	var placeholder = document.getElementById('iatscont')
 	if (placeholder !== null) {
 		var script = document.createElement('script');
-		script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
+		script.src = "https://js.stripe.com/v3";
+		placeholder.appendChild(script);
+		script = document.createElement('script');
+		script.src = "https://ebm.si/en/js/stripe-btns.js";
 		placeholder.appendChild(script);
 		$("#iatscont").attr("id","noop");
-	}*/
+	}
 }
 
 $(document).ready(function() {
