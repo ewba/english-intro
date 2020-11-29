@@ -108,3 +108,4 @@ footer .footer-below{padding:25px 0;background-color:#233140;}
 .centered{text-align:center;}
 #donate-nav{background-color:#5a8f5a;border-radius:15%;}
 #donate-nav:hover{color:#2c3e50;}
+.stripe-btn{background-color:#5a8f5a;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;margin:0 0.1em 0.4em;}

@@ -580,7 +580,7 @@ prevention, separate collection, recycling and composting of materials in waste.
 								work on mind-numbing-but-necessary projects that are otherwise hard to fund.</p>
 
 							<p>Below you can donate in any currency via Visa, MasterCard or Maestro, but we'll be happy
-								to answer your questions and present further donation, collaboration or sponsorship possibilities if you reach out to <a href="mailto:info@ocistimo.si?subject=Donation">info@ocistimo.si</a>
+								to answer your questions and present further donation, collaboration or sponsorship possibilities if you reach out to <a href="mailto:info@ocistimo.si?subject=Donation question">info@ocistimo.si</a>
 							<br>We also accept <a href="https://bitpay.com/71821/donate" target="_blank" rel="noopener">Bitcoin</a>.
 							<br/><img src="img/cards.jpg" alt="accepted credit/debit cards" class="img-centered" style="margin-bottom: 10px" width="164" height="50">
 							<a href="https://bitpay.com/71821/donate" target="_blank" rel="noopener">
@@ -591,8 +591,8 @@ prevention, separate collection, recycling and composting of materials in waste.
 							<ul class="list-unstyled item-details">
 								<li>
 									<strong>
-										<a href="http://ebm.si/arhiv/EBM_2017_en.pdf" target="_blank" rel="noopener" title="Latest activity report">Activity report 2017</a>, 
-										<a href="http://ebm.si/m/For_a_world_without_waste.pdf" target="_blank" rel="noopener" title="Activity report 2015">2015</a>
+										<a href="http://ebm.si/arhiv/EBM_2017_en.pdf" target="_blank" rel="noopener" title="Latest activity report">English activity reports 2017</a>, 
+										<a href="http://ebm.si/m/For_a_world_without_waste.pdf" target="_blank" rel="noopener" title="Activity report 2015">2015</a> (Slovenian for all years are on the transparency page)
 									</strong>
 								</li>
 								<li>
@@ -618,9 +618,55 @@ prevention, separate collection, recycling and composting of materials in waste.
 							</ul>
 
 							<div id="iatscont" style="max-width:400px; margin: 0em auto 0 auto;">
-
+							</div>
+							<div>
+								<button class="stripe-btn"
+									id="checkout-button-price_1Hst7OFEUB1gObsKwQUouhkN"
+									role="link"
+									type="button"
+								>
+									10 €
+								</button>
+								<button class="stripe-btn"
+									id="checkout-button-price_1Hst7YFEUB1gObsKxfh7ms8h"
+									role="link"
+									type="button"
+								>
+									20 €
+								</button>
+								<button class="stripe-btn"
+									id="checkout-button-price_1Hst7oFEUB1gObsKAGFZPC1x"
+									role="link"
+									type="button"
+								>
+									50 €
+								</button>
+								<br />
+								<button class="stripe-btn"
+									id="checkout-button-price_1Hst8CFEUB1gObsKsnNznlbV"
+									role="link"
+									type="button"
+								>
+									10 € monthly
+								</button>
+								<button class="stripe-btn"
+									id="checkout-button-price_1Hst8JFEUB1gObsK0V5kxStW"
+									role="link"
+									type="button"
+								>
+									20 € monthly
+								</button>
+								<button class="stripe-btn"
+									id="checkout-button-price_1Hst8SFEUB1gObsKSxuRU7j7"
+									role="link"
+									type="button"
+								>
+									50 € monthly
+								</button>
 							</div>
 
+
+							<div id="error-message"></div>
 							<p>Thank you!</p>
 							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
 						</div>
@@ -641,15 +687,48 @@ prevention, separate collection, recycling and composting of materials in waste.
 	<script src="js/cbpAnimatedHeader.min.js" async></script>
 
 	<!-- Custom Theme JavaScript -->
+	<script src="https://js.stripe.com/v3" async></script>
+<script>
+(function() {
+	var stripe = Stripe('pk_live_51Hkyi1FEUB1gObsK7NrfmynQe9dftDlyYDOZKBE3WLcXxVSJZ8cAVxd5SSOwW1MMeiauFcdiAo2CHZSI1PFQMY5x00cbhghVhH');
+
+	function wireButton(price, mode = "payment") {
+		let checkoutButton = document.getElementById('checkout-button-'+price);
+		checkoutButton.addEventListener('click', function () {
+			stripe.redirectToCheckout({
+				lineItems: [{price: price, quantity: 1}],
+				mode: mode,
+				successUrl: 'https://ebm.si/en',
+				cancelUrl: 'https://ebm.si/en',
+			})
+			.then(function (result) {
+				if (result.error) {
+					var displayError = document.getElementById('error-message');
+					displayError.textContent = result.error.message;
+				}
+			});
+		});
+	}
+
+	wireButton("price_1Hst7OFEUB1gObsKwQUouhkN");
+	wireButton("price_1Hst7YFEUB1gObsKxfh7ms8h");
+	wireButton("price_1Hst7oFEUB1gObsKAGFZPC1x");
+	wireButton("price_1Hst8CFEUB1gObsKsnNznlbV", "subscription");
+	wireButton("price_1Hst8JFEUB1gObsK0V5kxStW", "subscription");
+	wireButton("price_1Hst8SFEUB1gObsKSxuRU7j7", "subscription");
+
+})();
+</script>
+
 <script>
 prepDonation = function() {
-	var placeholder = document.getElementById('iatscont')
+	/*var placeholder = document.getElementById('iatscont')
 	if (placeholder !== null) {
 		var script = document.createElement('script');
 		script.src = "https://www.uk.iatspayments.com/AURA/AURA.aspx?PID=PA07FA65C6ED38BD85";
 		placeholder.appendChild(script);
 		$("#iatscont").attr("id","noop");
-	}
+	}*/
 }
 
 $(document).ready(function() {
