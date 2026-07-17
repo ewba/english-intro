@@ -11,7 +11,7 @@ h2,
 h3,
 h4,
 h5,
-h6{text-transform:uppercase;text-align:center;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;}
+h6{text-transform:uppercase;text-align:center;font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,Montserrat, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, ,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;}
 hr.star-light,
 hr.star-primary{margin:25px auto 30px;padding:0;max-width:250px;border:0;border-top:solid 5px;text-align:center;}
 hr.star-light:after,
@@ -26,7 +26,7 @@ rgba(90, 143, 90, .75)),
 url('/en/img/badbags.webp')no-repeat;height:100%;width:100%;top:0;bottom:0;left:0;right:0;z-index:0;background-position:50% 50%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;width:100%;}
 header .container{padding-top:100px;padding-bottom:50px;}
 header img{display:block;margin:0 auto 20px;}
-header .intro-text .name{display:block;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:2em;font-weight:700;}
+header .intro-text .name{display:block;text-transform:uppercase;font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,Montserrat, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, ,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:2em;font-weight:700;}
 header .intro-text .skills{font-size:1.25em;font-weight:300;}
 @media(min-width:768px){header .container{padding-top:200px;padding-bottom:100px;}
 header .intro-text .name{font-size:4.75em;}
@@ -37,7 +37,7 @@ header .intro-text .skills{font-size:1.75em;}
 .navbar-fixed-top.navbar-shrink{padding:10px 0;}
 .navbar-fixed-top.navbar-shrink .navbar-brand{font-size:1.5em;}
 }
-.navbar{text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;}
+.navbar{text-transform:uppercase;font-family:-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,Montserrat, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, ,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:700;}
 .navbar a:focus{outline:0;}
 .navbar .navbar-nav{letter-spacing:1px;}
 .navbar .navbar-nav li a:focus{outline:0;}
